@@ -14,17 +14,17 @@ namespace Calculaor
             Console.WriteLine("This is Calculator");
 
             Console.WriteLine ("Enter First Number");
-            double.TryParse(Console.ReadLine(), out first_Number);
+            if (!double.TryParse(Console.ReadLine(), out first_Number))
+                throw new InvalidOperationException();
 
             Console.WriteLine("Enter Second Number");
-            double.TryParse(Console.ReadLine(), out second_Number);
-            
-
+            if (!double.TryParse(Console.ReadLine(), out second_Number))
+                throw new InvalidOperationException();
 
             Console.WriteLine("Enter The Operation ( -, +, *, / )");
             operation = Console.ReadKey().KeyChar;
             Console.WriteLine();
-            // without validation
+   
 
             switch (operation)
             {
@@ -39,7 +39,7 @@ namespace Calculaor
                 case '*':
                     result = first_Number * second_Number;
                     break;
-
+                     
                 case '/':
                     if (second_Number == 0)
                         throw new DivideByZeroException();
