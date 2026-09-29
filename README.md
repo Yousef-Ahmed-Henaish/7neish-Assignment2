@@ -1,2 +1,2 @@
-# 7neish-Assignment2
-Assignment repo for assignment/1-2 (Assignment2)
+
+# This is Calculator to addition, subtraction, multiplication, division.
